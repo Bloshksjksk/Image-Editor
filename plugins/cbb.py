@@ -57,35 +57,35 @@ from script import script  # pylint:disable=import-error
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.data == "removebg":
         await query.message.edit_text(
-            text=Translator().translate("**Select required mode**ㅤㅤㅤㅤ", dest=Config.LANG).text,
+            text=Translator().translate("⏬**Select required mode**⏬", dest=Config.LANG).text,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text=Translator().translate("WITH WHITE BG", dest=Config.LANG).text, callback_data="rmbgwhite"
+                            text=Translator().translate("⬜WITH WHITE BG⬜", dest=Config.LANG).text, callback_data="rmbgwhite"
                         ),
                         InlineKeyboardButton(
-                            text=Translator().translate("WITHOUT BG", dest=Config.LANG).text, callback_data="rmbgplain"
+                            text=Translator().translate("⬛WITHOUT BG⬛", dest=Config.LANG).text, callback_data="rmbgplain"
                         ),
                     ],
-                    [InlineKeyboardButton(text=Translator().translate("STICKER", dest=Config.LANG).text, callback_data="rmbgsticker")],
+                    [InlineKeyboardButton(text=Translator().translate("〽️STICKER〽️", dest=Config.LANG).text, callback_data="rmbgsticker")],
                 ]
             ),
         )
     elif query.data == "stick":
         await query.message.edit(
-            Translator().translate("**Select a Type**", dest=Config.LANG).text,
+            Translator().translate("⏬**Select a Type**⏬", dest=Config.LANG).text,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=Translator().translate("Normal", dest=Config.LANG).text, callback_data="stkr"),
+                        InlineKeyboardButton(text=Translator().translate("🖼️Normal🖼️", dest=Config.LANG).text, callback_data="stkr"),
                         InlineKeyboardButton(
-                            text=Translator().translate("Edge Curved", dest=Config.LANG).text, callback_data="cur_ved"
+                            text=Translator().translate("〰️Edge Curved〰️", dest=Config.LANG).text, callback_data="cur_ved"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text=Translator().translate("Circle", dest=Config.LANG).text, callback_data="circle_sticker"
+                            text=Translator().translate("⭕Circle⭕", dest=Config.LANG).text, callback_data="circle_sticker"
                         )
                     ],
                 ]
@@ -93,14 +93,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "rotate":
         await query.message.edit_text(
-            Translator().translate("**Select the Degree**", dest=Config.LANG).text,
+            Translator().translate("📏**Select the Degree**📏", dest=Config.LANG).text,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="180", callback_data="180"),
-                        InlineKeyboardButton(text="90", callback_data="90"),
+                        InlineKeyboardButton(text="📐180📐", callback_data="180"),
+                        InlineKeyboardButton(text="📐90📐", callback_data="90"),
                     ],
-                    [InlineKeyboardButton(text="270", callback_data="270")],
+                    [InlineKeyboardButton(text="📐270📐", callback_data="270")],
                 ]
             ),
         )
@@ -109,12 +109,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(Translator().translate("HELP", dest=Config.LANG).text, callback_data="help_data"),
-                    InlineKeyboardButton(Translator().translate("ABOUT", dest=Config.LANG).text, callback_data="about_data"),
+                    InlineKeyboardButton(Translator().translate("🖲️HELP🖲️", dest=Config.LANG).text, callback_data="help_data"),
+                    InlineKeyboardButton(Translator().translate("🧑‍💻ABOUT🧑‍💻", dest=Config.LANG).text, callback_data="about_data"),
                 ],
                 [
                     InlineKeyboardButton(
-                        Translator().translate("SOURCE CODE", dest=Config.LANG).text, url="https://github.com/TroJanzHEX/Image-Editor"
+                        Translator().translate("🏆TRUMBOTS🏆", dest=Config.LANG).text, url="https://t.me/movie_time_botonly"
                     )
                 ],
             ]
@@ -129,12 +129,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(Translator().translate("BACK", dest=Config.LANG).text, callback_data="start_data"),
-                    InlineKeyboardButton(Translator().translate("ABOUT", dest=Config.LANG).text, callback_data="about_data"),
+                    InlineKeyboardButton(Translator().translate("🔙BACK🔙", dest=Config.LANG).text, callback_data="start_data"),
+                    InlineKeyboardButton(Translator().translate("🧑‍💻ABOUT🧑‍💻", dest=Config.LANG).text, callback_data="about_data"),
                 ],
                 [
                     InlineKeyboardButton(
-                        Translator().translate("SOURCE CODE", dest=Config.LANG).text, url="https://github.com/TroJanzHEX/Image-Editor"
+                        Translator().translate("🏆TRUMBOTS🏆", dest=Config.LANG).text, url="https://t.me/movie_time_botonly"
                     )
                 ],
             ]
@@ -146,12 +146,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(Translator().translate("BACK", dest=Config.LANG).text, callback_data="help_data"),
-                    InlineKeyboardButton(Translator().translate("START", dest=Config.LANG).text, callback_data="start_data"),
+                    InlineKeyboardButton(Translator().translate("🔙BACK🔙", dest=Config.LANG).text, callback_data="help_data"),
+                    InlineKeyboardButton(Translator().translate("✴️START✴️", dest=Config.LANG).text, callback_data="start_data"),
                 ],
                 [
                     InlineKeyboardButton(
-                        Translator().translate("SOURCE CODE", dest=Config.LANG).text, url="https://github.com/TroJanzHEX/Image-Editor"
+                        Translator().translate("🏆TRUMBOTS🏆", dest=Config.LANG).text, url="https://t.me/movie_time_botonly"
                     )
                 ],
             ]
@@ -161,15 +161,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "glitch":
         await query.message.edit_text(
-            Translator().translate("**Select required mode**ㅤㅤㅤㅤ", dest=Config.LANG).text,
+            Translator().translate("🪩**Select required mode**🪩", dest=Config.LANG).text,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text=Translator().translate("NORMAL", dest=Config.LANG).text, callback_data="normalglitch"
+                            text=Translator().translate("🖼️NORMAL🖼️", dest=Config.LANG).text, callback_data="normalglitch"
                         ),
                         InlineKeyboardButton(
-                            text=Translator().translate("SCAN LINES", dest=Config.LANG).text, callback_data="scanlineglitch"
+                            text=Translator().translate("📉📈SCAN LINES📈📉", dest=Config.LANG).text, callback_data="scanlineglitch"
                         ),
                     ]
                 ]
@@ -177,7 +177,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "normalglitch":
         await query.message.edit_text(
-            Translator().translate("**Select Glitch power level**", dest=Config.LANG).text,
+            Translator().translate("🔋**Select Glitch power level**🔋", dest=Config.LANG).text,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -194,7 +194,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "scanlineglitch":
         await query.message.edit_text(
-            Translator().translate("**Select Glitch power level**", dest=Config.LANG).text,
+            Translator().translate("🔋**Select Glitch power level**🔋", dest=Config.LANG).text,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -211,37 +211,37 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "blur":
         await query.message.edit(
-            Translator().translate("**Select a Type**", dest=Config.LANG).text,
+            Translator().translate("🛡️**Select a Blur Type**🛡️", dest=Config.LANG).text,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=Translator().translate("box", dest=Config.LANG).text, callback_data="box"),
-                        InlineKeyboardButton(text=Translator().translate("normal", dest=Config.LANG).text, callback_data="normal"),
+                        InlineKeyboardButton(text=Translator().translate("🔲box🔲", dest=Config.LANG).text, callback_data="box"),
+                        InlineKeyboardButton(text=Translator().translate("🖼️normal🖼️", dest=Config.LANG).text, callback_data="normal"),
                     ],
-                    [InlineKeyboardButton(text=Translator().translate("Gaussian", dest=Config.LANG).text, callback_data="gas")],
+                    [InlineKeyboardButton(text=Translator().translate("⚜️Gaussian⚜️", dest=Config.LANG).text, callback_data="gas")],
                 ]
             ),
         )
     elif query.data == "cover":
         await query.message.edit(
-            Translator().translate("**Select a Type**", dest=Config.LANG).text,
+            Translator().translate("🎁**Select a Type**🎁", dest=Config.LANG).text,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton(text=Translator().translate("COVER", dest=Config.LANG).text, callback_data="cover")],
+                    [InlineKeyboardButton(text=Translator().translate("📔COVER📔", dest=Config.LANG).text, callback_data="cover")],
                 ]
             ),
         )
     elif query.data == "circle":
         await query.message.edit_text(
-            Translator().translate("**Select required mode**", dest=Config.LANG).text,
+            Translator().translate("🏵️**Select required mode**🏵️", dest=Config.LANG).text,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text=Translator().translate("WITH BG", dest=Config.LANG).text, callback_data="circlewithbg"
+                            text=Translator().translate("WITH BG⬜", dest=Config.LANG).text, callback_data="circlewithbg"
                         ),
                         InlineKeyboardButton(
-                            text=Translator().translate("WITHOUT BG", dest=Config.LANG).text, callback_data="circlewithoutbg"
+                            text=Translator().translate("WITHOUT BG⬛", dest=Config.LANG).text, callback_data="circlewithoutbg"
                         ),
                     ]
                 ]
