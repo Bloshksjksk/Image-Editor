@@ -6,3 +6,4 @@ glitch_this
 requests
 opencv-python-headless
 googletrans==3.1.0a0
+asyncio
