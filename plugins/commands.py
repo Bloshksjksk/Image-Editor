@@ -1,9 +1,11 @@
 # By @TroJanzHEX
+import asyncio
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram import Client, filters
 from script import script  # pylint:disable=import-error
 from googletrans import Translator
 from config import Config
+
 
 
 @Client.on_message(filters.command(["start"]) & filters.private)
@@ -12,9 +14,23 @@ async def start(client: Client, message: Message):
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
         else:
-            await message.reply_photo(
-                caption=script.START_MSG.format(message.from_user.mention),
-                photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",
+            msg = await client.send_message(message.chat.id,"""
+            
+Congratulations! You subscribed to ImageEditor.
+
+Use /off to pause your subscription.
+
+Want to create your own bot?
+Go to @Manybot
+            
+            """)
+
+    # Delete the message after 1 second
+            await asyncio.sleep(1)
+            await msg.delete()
+    
+            await message.reply_text(
+                text=script.START_MSG.format(message.from_user.mention),
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -42,9 +58,8 @@ async def help(client, message):
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
         else:
-            await message.reply_photo(
-                caption=script.HELP_MSG,
-                photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",
+            await message.reply_text(
+                text=script.HELP_MSG,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -73,8 +88,7 @@ async def about(client, message):
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
         else:
             await message.reply_photo(
-                caption=script.ABOUT_MSG,
-                photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",
+                text=script.ABOUT_MSG,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
