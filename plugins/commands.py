@@ -12,19 +12,20 @@ async def start(client: Client, message: Message):
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
         else:
-            await message.reply_text(
-                text=script.START_MSG.format(message.from_user.mention),
+            await message.reply_photo(
+                caption=script.START_MSG.format(message.from_user.mention),
+                photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(Translator().translate('HELP', dest=Config.LANG).text, callback_data="help_data"),
-                            InlineKeyboardButton(Translator().translate('ABOUT', dest=Config.LANG).text, callback_data="about_data"),
+                            InlineKeyboardButton(Translator().translate('🖲️HELP🖲️', dest=Config.LANG).text, callback_data="help_data"),
+                            InlineKeyboardButton(Translator().translate('🧑‍💻ABOUT🧑‍💻', dest=Config.LANG).text, callback_data="about_data"),
                         ],
                         [
                             InlineKeyboardButton(
-                                Translator().translate('SOURCE CODE', dest=Config.LANG).text,
-                                url="https://github.com/TroJanzHEX/Image-Editor",
+                                Translator().translate('🏆TRUMBOTS🏆', dest=Config.LANG).text,
+                                url="https://t.me/movie_time_botonly",
                             )
                         ],
                     ]
@@ -41,19 +42,20 @@ async def help(client, message):
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
         else:
-            await message.reply_text(
-                text=script.HELP_MSG,
+            await message.reply_photo(
+                caption=script.HELP_MSG,
+                photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(Translator().translate('BACK', dest=Config.LANG).text, callback_data="start_data"),
-                            InlineKeyboardButton(Translator().translate('ABOUT', dest=Config.LANG).text, callback_data="about_data"),
+                            InlineKeyboardButton(Translator().translate('🔙BACK🔙', dest=Config.LANG).text, callback_data="start_data"),
+                            InlineKeyboardButton(Translator().translate('🧑‍💻ABOUT🧑‍💻', dest=Config.LANG).text, callback_data="about_data"),
                         ],
                         [
                             InlineKeyboardButton(
-                                Translator().translate('SOURCE CODE', dest=Config.LANG).text,
-                                url="https://github.com/TroJanzHEX/Image-Editor",
+                                Translator().translate('🏆TRUMBOTS🏆', dest=Config.LANG).text,
+                                url="https://t.me/movie_time_botonly",
                             )
                         ],
                     ]
@@ -70,19 +72,20 @@ async def about(client, message):
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
         else:
-            await message.reply_text(
-                text=script.ABOUT_MSG,
+            await message.reply_photo(
+                caption=script.ABOUT_MSG,
+                photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(Translator().translate('HELP', dest=Config.LANG).text, callback_data="help_data"),
-                            InlineKeyboardButton(Translator().translate('START', dest=Config.LANG).text, callback_data="start_data"),
+                            InlineKeyboardButton(Translator().translate('🖲️HELP🖲️', dest=Config.LANG).text, callback_data="help_data"),
+                            InlineKeyboardButton(Translator().translate('✴️START✴️', dest=Config.LANG).text, callback_data="start_data"),
                         ],
                         [
                             InlineKeyboardButton(
-                                Translator().translate('SOURCE CODE', dest=Config.LANG).text,
-                                url="https://github.com/TroJanzHEX/Image-Editor",
+                                Translator().translate('🏆TRUMBOTS🏆', dest=Config.LANG).text,
+                                url="https://t.me/movie_time_botonly",
                             )
                         ],
                     ]
