@@ -5,17 +5,17 @@ import os
 
 
 class Config(object):
-    TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
+    TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "6582902727:AAHfJm_jNz1i9CC86f4K82i1mWj1qdfTrJU")
 
-    APP_ID = int(os.environ.get("APP_ID", 123456789))
+    APP_ID = int(os.environ.get("APP_ID", 4682685))
 
-    API_HASH = os.environ.get("API_HASH", "")
+    API_HASH = os.environ.get("API_HASH", "3eba5d471162181b8a3f7f5c0a23c307")
 
     # Get this api from https://www.remove.bg/b/background-removal-api
-    RemoveBG_API = os.environ.get("RemoveBG_API", "")
+    RemoveBG_API = os.environ.get("RemoveBG_API", "vyXAWzTiUvEkjqrDXC2PFo6H")
 
     # Enable or disable private bot
-    PRIVATE = True
+    PRIVATE = False
 
     # Add id without @
     # if PRIVATE is True only users that are in this list are allowed to use the bot
