@@ -14,11 +14,11 @@ For more click help....</b>"""
 <code>🌀 Your Edited Image will be Uploaded </code>
 
 
-© @TroJanzHEX"""
+<a href='https://t me/movie_time_botonly'><b>©TRUMBOTS</b></a>"""
     ABOUT_MSG = """⭕️<b>My Name : Image Editor</b>
 
 ⭕️<b>Language :</b> <code>Python3</code>
 
 ⭕️<b>Library :</b> <a href='https://docs.pyrogram.org/'>Pyrogram 1.0.7</a>
 
-⭕️<b>Source Code :</b> 👉 <a href='https://t.me/movie_timw_botonly'>Click Here</a>"""
+⭕️<b>Source Code :</b> 👉 <a href='https://t.me/movie_time_botonly'>Click Here</a>"""
