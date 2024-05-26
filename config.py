@@ -15,7 +15,7 @@ class Config(object):
     RemoveBG_API = os.environ.get("RemoveBG_API", "vyXAWzTiUvEkjqrDXC2PFo6H")
 
     # Enable or disable private bot
-    PRIVATE = False
+    PRIVATE = True
     CHANNELS =["-1001678093514"]
 
     # Add id without @
