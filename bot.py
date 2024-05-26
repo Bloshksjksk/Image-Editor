@@ -24,6 +24,6 @@ with app:
     app_username = app.get_me().username  # Better call it global once due to telegram flood id
     Current_date = datetime. now(). date() 
     print("Bot started!",Current_date)
-    app.send_message(int(), "Bot started!")
-    app.send_message(int(), Current_date)
+    app.send_message(int(945284066),"Bot started!")
+    app.send_message(int(945284066), Current_date)
 app.run()
