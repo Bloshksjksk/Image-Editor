@@ -16,7 +16,7 @@ class Config(object):
 
     # Enable or disable private bot
     PRIVATE = False
-    CHANNELS =["movie_time_botonly"]
+    CHANNELS =["-1001678093514"]
 
     # Add id without @
     # if PRIVATE is True only users that are in this list are allowed to use the bot
