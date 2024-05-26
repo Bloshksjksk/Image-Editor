@@ -14,10 +14,13 @@ async def start(client: Client, message: Message):
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
             
-        if message.chat.username not in Config.CHANNELS:
-            await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not JOINED MY CHANNEL to use this bot!\n\n Join This Channel To Use Me @movie_time_botonly", dest=Config.LANG).text, quote=True)
+        member = await client.get_chat_member(Config.CHANNELS, message.from_user.id)
+
+    # If the user is not in the channel, send a message asking them to join
+       if member.status not in ["creator", "administrator", "member"]:
+         await message.reply_text("You must be a member of the specified channel to use this bot. Please join the channel and try again @movie_time_botonly.")
             
-        else:
+       else:
             await message.reply_text(
                 text=script.START_MSG.format(message.from_user.mention),
                 disable_web_page_preview=True,
@@ -46,9 +49,12 @@ async def help(client, message):
     try:
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
-        if message.chat.username not in Config.CHANNELS:
-            await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not JOINED MY CHANNEL to use this bot!\n\n Join This Channel To Use Me @movie_time_botonly", dest=Config.LANG).text, quote=True)
-        else:
+        member = await client.get_chat_member(Config.CHANNELS, message.from_user.id)
+
+    # If the user is not in the channel, send a message asking them to join
+       if member.status not in ["creator", "administrator", "member"]:
+         await message.reply_text("You must be a member of the specified channel to use this bot. Please join the channel and try again.")
+       else:
             await message.reply_text(
                 text=script.HELP_MSG,
                 disable_web_page_preview=True,
@@ -78,10 +84,13 @@ async def about(client, message):
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
 
-        if message.chat.username not in Config.CHANNELS:
-            await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not JOINED MY CHANNEL to use this bot!\n\n Join This Channel To Use Me @movie_time_botonly", dest=Config.LANG).text, quote=True)
-        else:
-            await message.reply_photo(
+        member = await client.get_chat_member(Config.CHANNELS, message.from_user.id)
+
+    # If the user is not in the channel, send a message asking them to join
+       if member.status not in ["creator", "administrator", "member"]:
+         await message.reply_text("You must be a member of the specified channel to use this bot. Please join the channel and try again.")
+       else:
+            await message.reply_text(
                 text=script.ABOUT_MSG,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
