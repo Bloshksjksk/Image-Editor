@@ -10,12 +10,12 @@ from config import Config
 
 @Client.on_message(filters.command(["start"]) & filters.private)
 async def start(client: Client, message: Message):
-    member = await client.get_chat_member(Config.CHANNELS, message.from_user.id)
+    #member = await client.get_chat_member(Config.CHANNELS, message.from_user.id)
     try:
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
             
-        if member.status not in ["creator", "administrator", "member"]:
+        if message.chat.username not in Config.CHANNELS:
             await message.reply_text("You must be a member of the specified channel to use this bot. Please join the channel and try again @movie_time_botonly.")
             
         else:
