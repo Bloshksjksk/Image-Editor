@@ -11,8 +11,12 @@ from config import Config
 @Client.on_message(filters.command(["start"]) & filters.private)
 async def start(client: Client, message: Message):
     try:
-        if Config.PRIVATE is True and message.chat.username not in Config.CHANNELS:
+        if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
+            
+        if message.chat.username not in Config.CHANNELS:
+            await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not JOINED MY CHANNEL to use this bot!\n\n Join This Channel To Use Me @movie_time_botonly", dest=Config.LANG).text, quote=True)
+            
         else:
             await message.reply_text(
                 text=script.START_MSG.format(message.from_user.mention),
@@ -42,6 +46,8 @@ async def help(client, message):
     try:
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
+        if message.chat.username not in Config.CHANNELS:
+            await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not JOINED MY CHANNEL to use this bot!\n\n Join This Channel To Use Me @movie_time_botonly", dest=Config.LANG).text, quote=True)
         else:
             await message.reply_text(
                 text=script.HELP_MSG,
@@ -71,6 +77,9 @@ async def about(client, message):
     try:
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
+
+        if message.chat.username not in Config.CHANNELS:
+            await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not JOINED MY CHANNEL to use this bot!\n\n Join This Channel To Use Me @movie_time_botonly", dest=Config.LANG).text, quote=True)
         else:
             await message.reply_photo(
                 text=script.ABOUT_MSG,
