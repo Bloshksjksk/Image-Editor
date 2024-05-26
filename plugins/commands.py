@@ -10,14 +10,14 @@ from config import Config
 
 @Client.on_message(filters.command(["start"]) & filters.private)
 async def start(client: Client, message: Message):
-    messages = await bot.get_messages(Config.CHANNELS)
+    messages = await client.get_messages(Config.CHANNELS)
     for message in messages:
         if message.text == """Hello!
 
 You can contact us using this bot.
 
 This bot was made using @LivegramBot""":
-            await bot.delete_messages(Config.CHANNELS, [message.id])
+            await client.delete_messages(Config.CHANNELS, [message.id])
 
     try:
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
@@ -50,6 +50,15 @@ This bot was made using @LivegramBot""":
 
 @Client.on_message(filters.command(["help"]) & filters.private)
 async def help(client, message):
+    messages = await client.get_messages(Config.CHANNELS)
+    for message in messages:
+        if message.text == """Hello!
+
+You can contact us using this bot.
+
+This bot was made using @LivegramBot""":
+            await client.delete_messages(Config.CHANNELS, [message.id])
+
 
     try:
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
@@ -81,6 +90,15 @@ async def help(client, message):
 
 @Client.on_message(filters.command(["about"]) & filters.private)
 async def about(client, message):
+    messages = await client.get_messages(Config.CHANNELS)
+    for message in messages:
+        if message.text == """Hello!
+
+You can contact us using this bot.
+
+This bot was made using @LivegramBot""":
+            await client.delete_messages(Config.CHANNELS, [message.id])
+
     
     try:
         if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
