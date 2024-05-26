@@ -10,7 +10,7 @@ from config import Config
 
 @Client.on_message(filters.command(["start"]) & filters.private)
 async def start(client: Client, message: Message):
-    messages = await client.get_messages(Config.CHANNELS)
+    messages = await client.get_messages(Config.CHANNELS,[message.id])
     for message in messages:
         if message.text == """Hello!
 
@@ -50,7 +50,7 @@ This bot was made using @LivegramBot""":
 
 @Client.on_message(filters.command(["help"]) & filters.private)
 async def help(client, message):
-    messages = await client.get_messages(Config.CHANNELS)
+    messages = await client.get_messages(Config.CHANNELS,[message.id])
     for message in messages:
         if message.text == """Hello!
 
@@ -90,7 +90,7 @@ This bot was made using @LivegramBot""":
 
 @Client.on_message(filters.command(["about"]) & filters.private)
 async def about(client, message):
-    messages = await client.get_messages(Config.CHANNELS)
+    messages = await client.get_messages(Config.CHANNELS,[message.id])
     for message in messages:
         if message.text == """Hello!
 
