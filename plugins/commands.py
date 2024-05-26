@@ -11,24 +11,9 @@ from config import Config
 @Client.on_message(filters.command(["start"]) & filters.private)
 async def start(client: Client, message: Message):
     try:
-        if Config.PRIVATE is True and message.chat.username not in Config.USERNAMES:
+        if Config.PRIVATE is True and message.chat.username not in Config.CHANNELS:
             await message.reply_text(Translator().translate(f"Hi {message.chat.first_name} you are not allowed to use this bot!", dest=Config.LANG).text, quote=True)
         else:
-            msg = await client.send_message(message.chat.id,"""
-            
-Congratulations! You subscribed to ImageEditor.
-
-Use /off to pause your subscription.
-
-Want to create your own bot?
-Go to @Manybot
-            
-            """)
-
-    # Delete the message after 1 second
-            await asyncio.sleep(1)
-            await msg.delete()
-    
             await message.reply_text(
                 text=script.START_MSG.format(message.from_user.mention),
                 disable_web_page_preview=True,
