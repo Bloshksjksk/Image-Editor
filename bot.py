@@ -1,5 +1,6 @@
 # By @TroJanzHEX
 from pyrogram import Client
+from datetime import datetime
 import os
 
 if bool(os.environ.get("WEBHOOK", False)):
@@ -19,4 +20,10 @@ if __name__ == "__main__":
         plugins=plugins,
         workers=300,
     )
-    app.run()
+with app:
+    app_username = app.get_me().username  # Better call it global once due to telegram flood id
+    Current_date = datetime. now(). date() 
+    print("Bot started!",Current_date)
+    app.send_message(int(), "Bot started!")
+    app.send_message(int(), Current_date)
+app.run()
